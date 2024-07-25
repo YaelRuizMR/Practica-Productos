@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar producto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/formularioProducto.js"></script>
+</head>
+<body>
+    <h1>Editar datos</h1>
+    <div class="container">
+        <form action="/editarProducto" method="post">
+            <input value="<%= idproducto %>" type="text" name="idproducto" id="idproducto">
+            <label for="nombre">Nombre: <span class="ocultar mensajeNombre">(Nombre incorrecto)</span></label>
+            <input value="<%= nombre %>" id="nombre" type="text" name="nombre" placeholder="Nombre" autofocus>
+            <i class="ocultar tacheNombre fa-regular fa-circle-xmark"></i>
+            <i class="ocultar buenaNombre fa-regular fa-circle-check"></i>
+            
+            <label for="precio">Precio: <span class="ocultar mensajeCelular">(Solo 10 numeros)</span></label>
+            <input value="<%= precio %>" id="precio" type="number" name="precio" placeholder="Precio">
+            <i class="ocultar tacheCelular fa-regular fa-circle-xmark"></i>
+            <i class="ocultar buenaCelular fa-regular fa-circle-check"></i>
+
+            <label for="stock">Stock: <span class="ocultar mensajeCorreo">(Stock incorrecto)</span></label>
+            <input value="<%= stock %>" id="stock" type="number" name="stock" placeholder="Stock">
+            <i class="ocultar tacheCorreo fa-regular fa-circle-xmark"></i>
+            <i class="ocultar buenaCorreo fa-regular fa-circle-check"></i>
+
+            <button id="Submit" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

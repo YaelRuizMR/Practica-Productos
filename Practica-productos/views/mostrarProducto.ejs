@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web responsiva</title>
+    <link rel="stylesheet" href="css/tabla.css">
+</head>
+<body>
+    <div class="complete-cont">
+        <div class="table-cont">
+            <h1>Productos diversos</h1>
+            <div id="conenedor">
+                <table>
+                    <thead>
+                        <th>id</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Editar</th>
+                        <th>Borrar</th>
+                    </thead>
+                    <tbody>
+                        <% 
+                        productosBD.forEach(producto => {
+                        %>
+                        <tr>
+                            <td><%= producto.idproducto %></td>
+                            <td><%= producto.nombre %></td>
+                            <td><%= producto.precio %></td>
+                            <td><%= producto.stock %></td>
+                            <td>
+                                <a href="/editarProducto/<%= producto.idproducto %>">Editar</a>
+                            </td>
+                            <td>
+                                <a href="/borrarProducto/<%= producto.idproducto %>">Borrar</a>
+                            </td>
+                        </tr>
+                        <% 
+                        });
+                        %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="direct-buttons">
+            <a href="/agregarProducto">Agregar</a>
+            <a href="/">Usuarios</a>
+        </div>
+    </div>
+</body>
+</html>
